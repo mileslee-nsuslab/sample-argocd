@@ -19,10 +19,13 @@ spec:
         - containerPort: 80 # Nginx가 수신 대기할 포트
         volumeMounts:
         - name: sample-secret
-          mountPath: /temp/secret
+          mountPath: /etc/secret
           subPath: secret
       volumes:
       - name: sample-secret
         secret: 
           secretName: sample-secret
+          items:
+            - key: password
+              path: secret
 
