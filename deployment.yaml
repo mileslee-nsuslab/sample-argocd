@@ -17,9 +17,9 @@ spec:
         image: nginx:latest # 사용할 Nginx 도커 이미지
         ports:
         - containerPort: 80 # Nginx가 수신 대기할 포트
-        volumeMount:
+        volumeMounts:
         - name: sample-secret
-          mountPath: /
+          mountPath: "/"
           subPath: secret
       volumes:
       - name: sample-secret
