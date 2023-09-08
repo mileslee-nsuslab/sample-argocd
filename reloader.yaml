@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: reloder
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: reloader
+    targetRevision: 1.0.40
+    repoURL: https://stakater.github.io/stakater-charts
+    helm:
+      releaseName: reloader
+  destination:
+    name: miles-test
+    namespace: kube-system

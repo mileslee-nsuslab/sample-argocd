@@ -8,6 +8,8 @@ spec:
     matchLabels:
       app: nginx
   template:
+    annotations:
+      reloader.stakater.com/auto: "true"
     metadata:
       labels:
         app: nginx
