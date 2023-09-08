@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    reloader.stakater.com/auto: "true"
   name: nginx-deployment
 spec:
   replicas: 3 # 배포할 파드의 개수
@@ -8,8 +10,6 @@ spec:
     matchLabels:
       app: nginx
   template:
-    annotations:
-      reloader.stakater.com/auto: "true"
     metadata:
       labels:
         app: nginx
